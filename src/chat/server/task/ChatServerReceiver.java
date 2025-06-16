@@ -27,9 +27,8 @@ public class ChatServerReceiver implements Runnable {
                     System.out.println("Connection closed: " + socket.getInetAddress() + ":" + socket.getPort());
                     break;
                 }
-                String clientInfo = socket.getInetAddress() + ":" + socket.getPort();
-                String fullMessage = clientInfo + ":" + message;
-                messageBox.put(fullMessage);
+
+                messageBox.put(message);
             }
         } catch (IOException e) {
             System.out.println("Connection error with " + socket.getInetAddress() + ":" + socket.getPort() + ": " + e.getMessage());
